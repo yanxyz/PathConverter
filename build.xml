@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="Backslash2Slash" default="zip" basedir=".">
+
+	<target name="zip">
+	  <zip destfile="Backslash2Slash.Net4.5.zip" update="true">
+	  	<fileset file="Backslash2Slash/bin/Debug/Backslash2Slash.exe"/>
+	  </zip>
+	</target>
+</project>

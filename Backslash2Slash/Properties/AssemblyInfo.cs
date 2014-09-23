@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Backslash2Slash")]
-[assembly: AssemblyDescription("by Ivan Yan")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Backslash2Slash")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyCopyright("Copyright ©  2014  By Ivan Yan")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

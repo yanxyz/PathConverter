@@ -1,0 +1,77 @@
+﻿<Window x:Class="PathConverter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PathConverter"
+        mc:Ignorable="d"
+        Title="PathConverter" Height="230" Width="525"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="0,0,5,5"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="TextWrapping" Value="NoWrap"/>
+            <Setter Property="MaxLines" Value="1"/>
+            <Setter Property="IsReadOnly" Value="True"/>
+            <Style.Triggers>
+                <Trigger Property="IsReadOnly" Value="True">
+                    <Setter Property="Background" Value="#FFF5F5F5" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Margin" Value="0,0,0,5"/>
+        </Style>
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="Close" Executed="CloseCommand_Executed" />
+        <CommandBinding Command="Copy" Executed="CopyCommand_Executed" />
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Command="Close" Key="Esc" />
+    </Window.InputBindings>
+
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBox Name="tbPath" Grid.Column="0" Grid.Row="0" Margin="0,0,5,20"
+                 IsReadOnly="False"
+                 TextChanged="tbPath_TextChanged"
+                 PreviewMouseLeftButtonDown="tbPath_PreviewMouseLeftButtonDown"/>
+        <TextBlock Grid.Column="1" Grid.Row="0"
+                   Padding="5" Margin="0,0,0,20"
+                   HorizontalAlignment="Right">
+            <Hyperlink Click="About_Click">About</Hyperlink>
+        </TextBlock>
+
+        <TextBox Grid.Column="0" Grid.Row="1" Text="{Binding Paths[0]}"/>
+        <Button Grid.Column="1" Grid.Row="1" Command="Copy" CommandParameter="0">Copy</Button>
+
+        <TextBox Grid.Column="0" Grid.Row="2" Text="{Binding Paths[1]}"/>
+        <Button Grid.Column="1" Grid.Row="2" Command="Copy" CommandParameter="1">Copy</Button>
+
+        <TextBox Grid.Column="0" Grid.Row="3" Text="{Binding Paths[2]}"/>
+        <Button Grid.Column="1" Grid.Row="3" Command="Copy" CommandParameter="2">Copy</Button>
+
+        <TextBox Grid.Column="0" Grid.Row="4" Text="{Binding Paths[3]}"/>
+        <Button Grid.Column="1" Grid.Row="4" Command="Copy" CommandParameter="3">Copy</Button>
+
+        <TextBox Grid.Column="0" Grid.Row="6" Name="txtMessage" Visibility="Collapsed"/>
+
+    </Grid>
+</Window>

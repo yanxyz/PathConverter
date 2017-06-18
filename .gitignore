@@ -1,0 +1,9 @@
+﻿*.zip
+.vscode
+
+*.suo
+*.user
+.vs/
+[Bb]in/
+[Oo]bj/
+[Ll]ib/
